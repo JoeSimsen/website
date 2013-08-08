@@ -1,12 +1,46 @@
+@media (min-width: 768px) {
+	.container {
+		width: 724px;
+	}
+}
 body {
 	background-color: #eff1f4;
 	font-family: Droid Sans;
 }
 .dark {
-	background-color: #263138;
+	background-color: #333;
 	color: #eff1f4;
 }
 .row .container {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+.follow {
+	background-color: #3366CC;
+	color: #eff1f4;
+	display: block;
+	height: 190px;
+	text-decoration: none;
+	width: 180px;
+}
+	.follow:hover {
+		cursor: pointer;
+	}
+	.follow p {
+		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, 0.4);
+		text-align: center;
+		padding: 20px 15px;
+	}
+	.follow span {
+		display: block;
+		height: 130px;
+	}
+	.follow.linkedin {
+		background-color: #469FE8;
+		margin: 0 auto;
+	}
+	.follow.google {
+		background-color: #DD4B39;
+		margin-left: auto;
+	}

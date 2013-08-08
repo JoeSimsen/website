@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row-fluid">
 	<div class="container">
-		<div class="row">
+		<div class="row-fluid">
 			<div class="span12">
 				<h1><?php echo $model->name ?></h1>
 				<?php echo $model->intro ?>
@@ -9,21 +9,27 @@
 	</div>
 </div>
 
-<div class="row dark">
+<div class="row-fluid dark">
 	<div class="container">
-		<div class="row">
-			<div class="span8"><?php echo $model->content ?></div>
+		<div class="row-fluid">
 			<div class="span4">
-				<!-- AddThis Follow BEGIN -->
-				<p>Follow me</p>
-				<div class="addthis_toolbox addthis_32x32_style addthis_default_style">
-				<a class="addthis_button_facebook_follow" addthis:userid="joey.simsen"></a>
-				<a class="addthis_button_twitter_follow" addthis:userid="__sinn"></a>
-				<a class="addthis_button_linkedin_follow" addthis:userid="joeysimsen"></a>
-				<a class="addthis_button_google_follow" addthis:userid="u/0/105947409451452056557/"></a>
-				</div>
+				<a class="follow facebook" addthis:userid="joey.simsen">
+					<span>f</span>
+					<p>Volg mij op facebook</p>
+				</a>
+			</div>
+			<div class="span4">
+				<a class="follow linkedin" addthis:userid="joeysimsen">
+					<span>in</span>
+					<p>Volg mij op linkedIn</p>
+				</a>
+			</div>
+			<div class="span4">
+				<a class="follow google" addthis:userid="u/0/105947409451452056557/">
+					<span>f</span>
+					<p>Volg mij op google+</p>
+				</a>
 				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f42173a5cbc371e"></script>
-				<!-- AddThis Follow END -->
 			</div>
 		</div>
 	</div>
