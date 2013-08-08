@@ -1,0 +1,12 @@
+body {
+	background-color: #eff1f4;
+	font-family: Droid Sans;
+}
+.dark {
+	background-color: #263138;
+	color: #eff1f4;
+}
+.row .container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
