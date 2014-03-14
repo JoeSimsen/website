@@ -9,7 +9,6 @@ $baseUrl = Yii::app()->request->baseUrl;
 
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 	<?
 		$script = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('application.vendors'));
@@ -30,25 +29,32 @@ $baseUrl = Yii::app()->request->baseUrl;
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
 	<title>Admin</title>
 </head>
 
 <body>
-	<?php 
-	$this->widget('bootstrap.widgets.TbNavbar', array(
-	    'brand' => 'Title',
-	    'fixed' => false,
-		'type' => 'inverse',
-	    'items' => array(
-	        '<form class="navbar-form pull-left">
-	        <input type="text" class="span2">
-	        <button type="submit" class="btn">Submit</button>
-	        </form>'
-	    )
-	));
-	?>
+	<div class="row-fluid ">
+		<div class="span12">
+			<div class="navbar navbar-inverse navbar-fixed-1">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<a href="/website/" class="brand">
+							Joey Simsen
+						</a>
+						<div class="nav-collapse collapse" id="yii_bootstrap_collapse_0">
+							<?= Yii::app()->user->isGuest ? '' : CHtml::link('logout', $this->createUrl('default/logout')) ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <div class="row-fluid">
 		<?php echo $content; ?>
 	</div>

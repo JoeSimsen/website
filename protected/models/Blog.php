@@ -129,6 +129,28 @@ class Blog extends CActiveRecord
 		));
 	}
 	
+	public function getTags()
+	{
+		return array('music', 'picture', 'wrench', 'globe');
+	}
+	
+	public function getLabelForTag($tag = '')
+	{
+		switch ($tag) {
+			case 'music':
+				return 'Music';
+				break;
+			case 'globe':
+				return 'Website';
+				break;
+			case 'wrench':
+				return 'Project';
+				break;
+			default:
+				return 'Unknown';
+		}
+	}
+	
 	public function beforeSave()
 	{
 		if($this->isNewRecord) // only if adding new record

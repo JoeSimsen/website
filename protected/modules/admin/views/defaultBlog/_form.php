@@ -19,7 +19,7 @@
 	<?= $form->select2Row($model, 'categorie', array(
 	        'asDropDownList' => false,
 	        'options' => array(
-	            'tags' => array('music', 'picture', 'wrench'),
+	            'tags' => $model->getTags(),
 	            'placeholder' => 'Typ een categorie in',
 				'createSearchChoice' => '',
 	            'width' => '40%',

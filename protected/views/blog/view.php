@@ -38,7 +38,7 @@ Yii::app()->clientScript
 					<?
 					$categorieen = explode(',', $model->categorie);
 					foreach ($categorieen as $categorie)
-						echo '<li><span class="glyphicon glyphicon-'.$categorie.'"></span>'.$categorie.'</li>';
+						echo '<li><span class="glyphicon glyphicon-'.$categorie.'"></span>'.$model->getLabelForTag($categorie).'</li>';
 					?>
 				</ul>
 			</div>
