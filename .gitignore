@@ -1,3 +1,6 @@
-yii
+assets
 protected/extensions
+protected/runtime
 protected/vendors
+upload
+yii

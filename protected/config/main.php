@@ -59,7 +59,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 // 			'connectionString' => 'mysql:host=https://dbadmin.one.com/;dbname=joeysimsen_com',
-			'connectionString' => 'mysql:host=localhost;dbname=js',
+			'connectionString' => 'mysql:host=localhost;dbname=joeysimsen_com',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
