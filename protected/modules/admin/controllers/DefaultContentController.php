@@ -27,7 +27,7 @@ class DefaultContentController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update', 'admin','delete'),
+				'actions'=>array('create','update', 'admin','delete','simpletree'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -55,8 +55,8 @@ class DefaultContentController extends Controller
 			
 			if($model->save())
 				$this->redirect(array('admin'));
-// 			else 
-// 				print_r($model->errors);
+			else 
+				print_r($model->errors);
 		}
 
 		$this->render('create',array(
@@ -81,6 +81,8 @@ class DefaultContentController extends Controller
 			$model->attributes=$_POST['Content'];
 			if($model->save())
 				$this->redirect(array('admin','id'=>$model->id));
+			else 
+				print_r($model->errors);
 		}
 
 		$this->render('update',array(
@@ -95,17 +97,17 @@ class DefaultContentController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
+// 		if(Yii::app()->request->isPostRequest)
+// 		{
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+// 		}
+// 		else
+// 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -132,6 +134,13 @@ class DefaultContentController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	//ajaxController
+	public function actionSimpletree()
+	{
+		Yii::import('application.extensions.SimpleTreeWidget');
+		SimpleTreeWidget::performAjax();
 	}
 
 	/**
