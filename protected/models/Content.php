@@ -8,6 +8,7 @@
  * @property string $name
  * @property string $intro
  * @property string $content
+ * @property string $route
  * @property string $parent_id
  * @property integer $level
  */
@@ -39,13 +40,13 @@ class Content extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, intro, content', 'required'),
+			array('name', 'required'),
 			array('level', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>50),
 			array('parent_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, intro, content, parent_id, level', 'safe', 'on'=>'search'),
+			array('id, name, intro, content, route', 'safe'),
 		);
 	}
 
@@ -71,6 +72,7 @@ class Content extends CActiveRecord
 			'name' => 'Name',
 			'intro' => 'Intro',
 			'content' => 'Content',
+			'route' => 'Route',
 			'parent_id' => 'Parent',
 			'level' => 'Level',
 		);
@@ -87,12 +89,9 @@ class Content extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('intro',$this->intro,true);
 		$criteria->compare('content',$this->content,true);
-		$criteria->compare('parent_id',$this->parent_id,true);
-		$criteria->compare('level',$this->level);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

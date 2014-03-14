@@ -20,4 +20,19 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	public $model = null;
+	
+	public function run($actionID)
+	{
+		if($actionID==='')
+		{
+			$actionID = Yii::app()->db->createCommand()
+			->select('route')
+			->from('content')
+			->where('id=:id', array(':id'=> Yii::app()->request->getParam('id',1)))
+			->queryScalar();
+		}
+		parent::run($actionID);
+	}
 }
