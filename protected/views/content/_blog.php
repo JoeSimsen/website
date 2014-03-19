@@ -13,16 +13,16 @@ if ($index == 0)
 <div class="item<?= $class ?>">
 	<a href="<?= $this->createUrl('blog/view', array('id' => $data->id)) ?>" class="info">
 		<?= CHtml::image($data->getImageUrl($data->long), $data->title, array()); ?>
+		<div class="mask">  
+			<div class="categories">
+				<span><?= Yii::app()->dateFormatter->format("MMMM d", $data->date_created); ?></span>
+				<? 
+				$categorieen = explode(',', $data->categorie);
+				foreach ($categorieen as $categorie)
+					echo '<div class="cat"><span class="glyphicon glyphicon-'.$categorie.'"></span>'.$data->getLabelForTag($categorie).'</div>'; 
+				?>
+			</div>
+			<h2><span><?= $data->title ?></span></h2>
+	     </div> 
     </a>  
-	<div class="mask">  
-		<div class="categories">
-			<span><?= Yii::app()->dateFormatter->format("d MMMM y", $data->date_created); ?></span>
-			<? 
-			$categorieen = explode(',', $data->categorie);
-			foreach ($categorieen as $categorie)
-				echo '<span class="glyphicon glyphicon-'.$categorie.'"></span>'; 
-			?>
-		</div>
-		<h2><span><?= $data->title ?></span></h2>
-     </div> 
 </div>

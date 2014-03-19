@@ -15,11 +15,11 @@ Yii::app()->clientScript
 			<div class="header">
 				<div class="mask">  
 					<div class="categories">
-						<span><?= Yii::app()->dateFormatter->format("d MMMM y", $model->date_created); ?></span>
+						<span><?= Yii::app()->dateFormatter->format("MMMM d", $model->date_created); ?></span>
 						<? 
 						$categorieen = explode(',', $model->categorie);
 						foreach ($categorieen as $categorie)
-							echo '<span class="glyphicon glyphicon-'.$categorie.'"></span>'; 
+							echo '<div class="cat"><span class="glyphicon glyphicon-'.$categorie.'"></span>'.$model->getLabelForTag($categorie).'</div>'; 
 						?>
 					</div>
 			     </div>

@@ -6,11 +6,11 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name' => 'Joey Simsen',
 
 	// preloading 'log' component
-	'preload'=>array('log','bootstrap'),
+	'preload'=>array('log'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -40,6 +40,25 @@ return array(
 			'allowAutoLogin'=>true,
 			'loginUrl' => array('admin/default/login'),
 		),
+		'clientScript' => array(
+			'coreScriptPosition' => CClientScript::POS_END,
+			'class' => 'application.vendors.NLSClientScript',
+			'compressMergedJs' => true, //def:false
+			'compressMergedCss' => true, //def:false
+			'appVersion' => 1.1, //if set, it will be appended to the urls of the merged scripts/css
+			'scriptMap' => array(
+				'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
+			),
+			'packages'=>array(
+				'bbq'=>array(
+					'depends'=>array('browser'),
+				),
+				'browser'=>array(
+					'basePath' => 'application.vendors',
+					'js' => array('jquery.browser.min.js'),
+				),
+			),
+		),
 		'bootstrap' => array(
 		    'class' => 'ext.yiibooster.components.Bootstrap',
 		    'responsiveCss' => true,
@@ -58,13 +77,10 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-// 			'connectionString' => 'mysql:host=https://dbadmin.one.com/;dbname=joeysimsen_com',
 			'connectionString' => 'mysql:host=localhost;dbname=joeysimsen_com',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
-// 			'username' => 'joeysimsen_com',
-// 			'password' => 'hKT8dHX4',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

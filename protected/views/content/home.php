@@ -2,27 +2,8 @@
 $baseUrl = Yii::app()->request->baseUrl;
 
 $script = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('application.extensions'));
-Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js')
-			->registerScriptFile($script.'/imagesloaded.pkgd.min.js')
-			->registerScript(__FILE__ . 'masonr', "
-				// initialize
-				var container = $('.mason').masonry({
-					  columnWidth: '.sizer',
-					  	itemSelector: '.item',
-				  	});
-				
-				container.imagesLoaded(function() {
-					$('.mason').masonry({
-					  columnWidth: '.sizer',
-					  	itemSelector: '.item',
-				  	});
-				
-					$('.item').each(function(){
-						$(this).animate({ opacity: 1 });
-					});
-			  	});
-			  	
-			")
+Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js', CClientScript::POS_END)
+			->registerScriptFile($script.'/imagesloaded.pkgd.min.js', CClientScript::POS_END)
 			->registerScript(__FILE__ . 'imagesizing', "
 				$('.item').each(function(){
 				    var refRatio = 240/300;
@@ -35,6 +16,26 @@ Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js')
 				        $(this).addClass('landscape');
 				    }
 				})
+			", CClientScript::POS_LOAD)
+			->registerScript(__FILE__ . 'masonr', "
+				// initialize
+				var container = $('.mason').masonry({
+					  columnWidth: '.sizer',
+					  	itemSelector: '.item',
+				  	});
+				
+				container.imagesLoaded(function() {
+					$('.mason').masonry({
+						columnWidth: '.sizer',
+					  	itemSelector: '.item',
+						isAnimated: true,
+				  	});
+				
+					$('.item').each(function(){
+						$(this).animate({ opacity: 1 });
+					});
+			  	});
+			  	
 			", CClientScript::POS_LOAD);
 ?>
 <div class="space">
@@ -45,7 +46,7 @@ Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js')
 			<?= CHtml::link('<span class="glyphicon glyphicon-envelope"></span> Contact me', 'mailto:joeysimsen@gmail.com', array('class' => 'btn btn-primary')) ?>
 		</div>
 		<div class="span7 hidden-phone">
-			<img alt="Joey Simsen" src="<?= $baseUrl ?>/images/js2.png">
+			<img alt="Joey Simsen" src="<?= $baseUrl ?>/images/js2.png" />
 		</div>
 	</div>
 </div>
