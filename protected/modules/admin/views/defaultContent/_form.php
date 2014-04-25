@@ -9,23 +9,9 @@
 
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>50)); ?>
 
-	<?php echo $form->ckEditorRow($model, 'intro', array(
-		'editorOptions'=>array(
-			'height' => '100',
-			'width'=>'600', 
-			'resize_maxWidth'=>'640',
-			'resize_minWidth'=>'320',
-			'plugins' => 'basicstyles,toolbar,enterkey,entities,floatingspace,wysiwygarea,indentlist,link,list,dialog,dialogui,button,indent,fakeobjects',
-		)
-	));?>
+	<?php echo $form->textArea($model, 'intro');?>
 	
-	<?php echo $form->ckEditorRow($model, 'content', array(
-		'editorOptions'=>array(
-			'width'=>'640', 
-			'resize_maxWidth'=>'640',
-			'resize_minWidth'=>'320',
-		)
-	));?>
+	<?php echo $form->textArea($model, 'content');?>
 	
 	<?php echo $form->textFieldRow($model,'route',array('class'=>'span5','maxlength'=>50)); ?>
 	

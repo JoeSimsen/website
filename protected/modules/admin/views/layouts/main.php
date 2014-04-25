@@ -16,8 +16,10 @@ $baseUrl = Yii::app()->request->baseUrl;
 	<script>
 		tinymce.init({
 			selector:'textarea',
-		    plugins: "link responsivefilemanager",
+		    plugins: "link responsivefilemanager code",
 		    height: 400,
+		    schema: "html5",
+		    extended_valid_elements:"@[itemscope|itemtype|itemid|itemprop|content],div,span,time[datetime]",
 		    relative_urls : false,
 		    external_filemanager_path:"<?= $script ?>/responsivefilemanagerbase/filemanager/",
 		   filemanager_title:"Responsive Filemanager" ,

@@ -138,10 +138,10 @@ class Blog extends CActiveRecord
 	{
 		switch ($tag) {
 			case 'music':
-				return 'Music';
+				return 'Music project';
 				break;
 			case 'globe':
-				return 'Website';
+				return 'Web development';
 				break;
 			case 'wrench':
 				return 'Project';

@@ -1,10 +1,10 @@
-<div class="container">
-	<div class="row-fluid">
-		<div class="intro span5">
+	<div class="row">
+		<div class="col-sm-12">
 			<?= $model->intro ?>
 		</div>
-		<div class="span7 last">
+	</div>
+	<div class="row" >
+		<div class="col-sm-12" style="background-color: #f39c12">
 			<?= $model->content ?>
 		</div>
 	</div>
-</div>

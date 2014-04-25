@@ -10,7 +10,7 @@ return array(
 	'name' => 'Joey Simsen',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array('log'),//, 'bootstrap'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -41,11 +41,11 @@ return array(
 			'loginUrl' => array('admin/default/login'),
 		),
 		'clientScript' => array(
-			'coreScriptPosition' => CClientScript::POS_END,
-			'class' => 'application.vendors.NLSClientScript',
-			'compressMergedJs' => true, //def:false
-			'compressMergedCss' => true, //def:false
-			'appVersion' => 1.1, //if set, it will be appended to the urls of the merged scripts/css
+// 			'coreScriptPosition' => CClientScript::POS_END,
+// 			'class' => 'application.vendors.NLSClientScript',
+// 			'compressMergedJs' => true, //def:false
+// 			'compressMergedCss' => true, //def:false
+// 			'appVersion' => 1.0, //if set, it will be appended to the urls of the merged scripts/css
 			'scriptMap' => array(
 				'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
 			),

@@ -2,7 +2,6 @@
 $class = $data->long ? ' long' : '';
 if ($index == 0)
 {
-	echo '<div class="sizer"></div>';
 	?>
 	<div class="item featured">
 		<span>Featured projects &rsaquo;</span>

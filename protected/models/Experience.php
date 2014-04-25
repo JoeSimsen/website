@@ -1,19 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "tbl_user".
+ * This is the model class for table "experience".
  *
- * The followings are the available columns in table 'tbl_user':
+ * The followings are the available columns in table 'experience':
  * @property integer $id
- * @property string $username
- * @property string $password
+ * @property string $title
+ * @property string $content
  */
-class User extends CActiveRecord
+class Experience extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return Experience the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -25,7 +25,7 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_user';
+		return 'experience';
 	}
 
 	/**
@@ -36,11 +36,10 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password', 'required'),
-			array('username, password', 'length', 'max'=>128),
+			array('title, content', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password', 'safe', 'on'=>'search'),
+			array('id, title, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,14 +61,9 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
+			'title' => 'Title',
+			'content' => 'Content',
 		);
-	}
-	
-	public function validatePassword($password)
-	{
-		return $password === $this->password;
 	}
 
 	/**
@@ -84,8 +78,8 @@ class User extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('content',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

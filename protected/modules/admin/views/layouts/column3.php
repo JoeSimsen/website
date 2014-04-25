@@ -16,6 +16,7 @@
 	                'label' => 'Pagina\'s',
 	                'url' => array('//admin/defaultContent/admin'),
 	            ),
+	            array('label' => 'Experience', 'url' => array('//admin/experience/index')),
 	            array('label' => 'Blog', 'url' => array('//admin/defaultBlog/index')),
 	        )
 	    )
