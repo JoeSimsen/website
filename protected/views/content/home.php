@@ -53,7 +53,7 @@ Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js', CCl
 ?>
 <div class="container">
 	<div class="row intro" itemscope itemtype="http://data-vocabulary.org/Person">
-		<div class="col-sm-5 col-sm-push-0 col-xs-push-10 col-xs-2">
+		<div class="col-sm-5 hidden-xs">
 			<h1><?php echo $model->name ?></h1>
 			<meta itemprop="name" content="Joey Simsen" />
 			<meta itemprop="birthdate" content="1989-11-16" />
@@ -61,7 +61,7 @@ Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js', CCl
 			<?= $model->intro ?>
 			<?= CHtml::link('<span class="glyphicon glyphicon-envelope"></span> Contact me', 'mailto:joeysimsen@gmail.com', array('class' => 'btn btn-primary')) ?>
 		</div>
-		<div class="col-sm-7 col-xs-pull-2 col-xs-10">
+		<div class="col-sm-7 col-xs-12">
 			<img src="<?= $baseUrl ?>/images/js_bg.jpg" />
 			<img class="plax" src="<?= $baseUrl ?>/images/js_city.png" data-xrange="10" data-yrange="5" data-invert="true" />
 			<img class="plax js" alt="Joey Simsen" src="<?= $baseUrl ?>/images/js_phone.png" data-xrange="20" data-yrange="10" itemprop="photo" />

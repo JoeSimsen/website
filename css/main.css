@@ -62,7 +62,9 @@ a {
 	}
 	.row .menu img {
 		float: left;
-		margin-left: -15px;
+		margin-left: -35px;
+		margin-top: -10px;
+		margin-right: 10px;
 		width: 48px;
 	}
 .row img {
@@ -479,5 +481,11 @@ margin: 10px;
 		}
 		.item h2 {
 			bottom: -346px;
+			font-size: 18px;
+			font-weight: normal;
+			line-height: 24px;
 		}
+	.content .text {
+		margin-left: 0px;
+	}
 }

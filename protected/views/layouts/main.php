@@ -1,5 +1,5 @@
 <?php 
-$baseUrl = Yii::app()->baseUrl;
+$baseUrl = Yii::app()->getRequest()->getBaseUrl(true);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -34,12 +34,12 @@ $baseUrl = Yii::app()->baseUrl;
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 menu">
-				<img alt="Logo" src="<?= $baseUrl ?>/images/sign3.jpg"/>
-				<a href="<?= $baseUrl ?>" class="brand hidden-xs">
+				<a href="<?= $baseUrl ?>" class="brand">
+					<img alt="Logo" src="<?= $baseUrl ?>/images/sign3.jpg"/>
 					Joey Simsen
 				</a>
 				
-				<div class="social">
+				<div class="social hidden-xs">
 					<a href="https://github.com/JoeSimsen" class="symbol github">&#xe237;</a>
 					<a href="https://www.facebook.com/joey.simsen" class="symbol facebook">&#xe227;</a>
 					<a href="https://twitter.com/__Sinn" class="symbol">&#xe286;</a>
