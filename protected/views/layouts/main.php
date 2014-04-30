@@ -18,7 +18,7 @@ $baseUrl = Yii::app()->baseUrl;
 							->registerScriptFile("http://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js", CClientScript::POS_END)
 							
 							->registerCssFile(Yii::app()->request->baseUrl."/css/bootstrap.min.css")
-							->registerCssFile(Yii::app()->request->baseUrl."/css/main.css")
+							->registerCssFile(Yii::app()->request->baseUrl."/css/main.css?v=1")
 							->registerScript('ganaly', "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 								  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 								  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -26,7 +26,7 @@ $baseUrl = Yii::app()->baseUrl;
 								
 								  ga('create', 'UA-46135023-1', 'joeysimsen.com');
 								  ga('send', 'pageview');
-							", CClientScript::POS_END);
+							", CClientScript::POS_HEAD);
 ?>
 </head>
 
