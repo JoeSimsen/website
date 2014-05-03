@@ -27,7 +27,6 @@ class ContentController extends Controller
 	 */
 	public function actionView($id = 1)
 	{
-		$this->model = $this->loadModel($id);
 		$dataProvider = new CActiveDataProvider('Blog');
 		$dataProvider->sort->defaultOrder = 'date_created DESC';
 		
@@ -42,19 +41,6 @@ class ContentController extends Controller
 			'model' => $this->model,
 			'dataProvider' => $dataProvider,
 		));
-	}
-
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
-	public function loadModel($id)
-	{
-		$model=Content::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
 	}
 
 	/**

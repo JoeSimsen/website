@@ -8,6 +8,7 @@ $baseUrl = Yii::app()->getRequest()->getBaseUrl(true);
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="<?= $baseUrl ?>/favicon.ico" />
 	<title>Joey Simsen | Web programmer</title>
+	<meta name="description" content="<?= strip_tags($this->model->intro) ?>" />
 	<meta name="language" content="nl" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <?php 
@@ -32,7 +33,7 @@ $baseUrl = Yii::app()->getRequest()->getBaseUrl(true);
 
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="row menurow">
 			<div class="col-sm-12 menu">
 				<a href="<?= $baseUrl ?>" class="brand">
 					<img alt="Logo" src="<?= $baseUrl ?>/images/sign3.jpg"/>

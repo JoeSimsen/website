@@ -7,11 +7,10 @@ Yii::app()->clientScript->registerScriptFile($script.'/masonry.pkgd.min.js', CCl
 			->registerScriptFile($script.'/plax.js', CClientScript::POS_END)
 			->registerScript(__FILE__ . 'imagesizing', "
 				$('.item').each(function(){
-				    var refRatio = 240/300;
 					var imgH = $(this).children('img').height();
 					var imgW = $(this).children('img').width();
 
-				    if ( (imgW/imgH) < refRatio ) { 
+				    if ( imgW < imgH ) { 
 				        $(this).addClass('portrait');
 				    } else {
 				        $(this).addClass('landscape');

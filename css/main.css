@@ -58,7 +58,7 @@ a {
 		display: block;
 		float: left;
 		font-size: 20px;
-		padding: 10px 20px 10px;
+		padding: 10px 20px 0;
 	}
 	.row .menu img {
 		float: left;
@@ -174,6 +174,7 @@ a {
 		background: #171717;
 		height: 100%;
 		overflow: hidden;
+		padding-right: 1%;
 	}
 	.content .header {
 		margin: 0 -15px;
@@ -256,6 +257,7 @@ a {
 		.item.long.landscape img, 
 		.item.portrait img {
 			height: initial;
+			width: 100%;
 		}
 		.item.long.portrait img,
 		.item.landscape img {
@@ -271,6 +273,7 @@ a {
 	ul.categories {
 		list-style-type: none;
 		margin: 0;
+		padding: 0;
 	}
 		ul.categories li{
 			height: 25px;
@@ -404,6 +407,10 @@ margin: 10px;
 		padding-top: 0.25%;
 		width: 1350px;
 	}
+	.intro .col-sm-7 {
+		float: right;
+		width: 600px;
+	}
 	.item,
 	.sizer { 
 		width: 24%;
@@ -443,14 +450,28 @@ margin: 10px;
 	}
 }
 @media (max-width: 767px) {
+	.menurow {
+		height: 48px;
+	}
+		.col-sm-12.menu {
+		    left: 0;
+			margin: 0;
+			position: fixed;
+			top: 0;
+		    right: 0;
+		    z-index: 999;
+		}
 	.container {
 		padding: 0;
 	}
 	.container.mason {
 		width: 100%;
 	}
+	.content .col-sm-7, .content .col-sm-8 {
+		padding-right: 15px;
+	}
 	.row {
-		margin: 0;
+		margin: 2% 0 0;
 	}
 		.row.intro {
 			height: 200px;
@@ -486,6 +507,6 @@ margin: 10px;
 			line-height: 24px;
 		}
 	.content .text {
-		margin-left: 0px;
+		margin: 0 -7px;
 	}
 }

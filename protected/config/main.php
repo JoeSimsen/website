@@ -20,7 +20,15 @@ return array(
 	),
 
 	'modules'=>array(
-		'admin',
+		'admin' => array(
+			'preload'=>array('bootstrap'),
+			'components' => array(
+				'bootstrap' => array(
+					'class' => 'ext.yiibooster.components.Bootstrap',
+					'responsiveCss' => true,
+				),
+			),
+		),
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
@@ -41,11 +49,6 @@ return array(
 			'loginUrl' => array('admin/default/login'),
 		),
 		'clientScript' => array(
-// 			'coreScriptPosition' => CClientScript::POS_END,
-// 			'class' => 'application.vendors.NLSClientScript',
-// 			'compressMergedJs' => true, //def:false
-// 			'compressMergedCss' => true, //def:false
-// 			'appVersion' => 1.0, //if set, it will be appended to the urls of the merged scripts/css
 			'scriptMap' => array(
 				'jquery.js' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
 			),
@@ -59,10 +62,7 @@ return array(
 				),
 			),
 		),
-		'bootstrap' => array(
-		    'class' => 'ext.yiibooster.components.Bootstrap',
-		    'responsiveCss' => true,
-		),
+		
 		// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
 			'urlFormat'=>'path',
